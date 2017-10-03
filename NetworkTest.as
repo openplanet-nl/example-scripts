@@ -115,7 +115,7 @@ class NetworkTest
 			contentLength -= chunk.Length();
 
 			// If there's more to read, yield until the next frame. (Not necessary,
-			// we could also only yield if there's data available, but in this
+			// we could also only yield if there's no data available, but in this
 			// example we don't care too much.)
 			if (contentLength > 0) {
 				yield();
