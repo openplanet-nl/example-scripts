@@ -17,3 +17,7 @@ This plugin demonstrates how a script fiber works. Openplanet will execute the F
 We can then call `yield()` to suspend script execution and return execution back to Openplanet & Maniaplanet, or we can call `sleep()` with a milliseconds parameter to yield for a specific amount of time.
 
 In this example, we will increase a variable by 2 on the first frame, decrease it by 1 the second frame, then wait 1 second and do it again.
+
+## License
+
+All scripts in this repository are MIT licensed. You can use them however you wish.
