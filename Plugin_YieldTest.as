@@ -10,6 +10,10 @@
  *
  * In this example, we will increase a variable by 2 on the first frame,
  * decrease it by 1 the second frame, then wait 1 second and do it again.
+ *
+ * Note that we can only yield if we're inside of a coroutine. Main() is
+ * in fact a coroutine itself, so we may use it in there. Also see
+ * Plugin_CoroutineTest.as for more details.
  */
 
 // This is the variable we will be modifying in our script loop.
