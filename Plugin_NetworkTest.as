@@ -1,6 +1,7 @@
-/* NetworkTest by Miss
- *
- * This plugin will open a TCP socket on port 80 to icanhazip.com, sends a
+#name "Network example"
+#author "Miss"
+
+/* This plugin will open a TCP socket on port 80 to icanhazip.com, sends a
  * GET request to the server, and waits for a response to print to log.
  *
  * This is all done in an asynchronous manner - the connecting, the sending,

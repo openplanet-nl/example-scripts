@@ -1,6 +1,7 @@
-/* YieldTest by Miss
- *
- * This plugin demonstrates how a script loop works. Openplanet will
+#name "Yield example"
+#author "Miss"
+
+/* This plugin demonstrates how a script loop works. Openplanet will
  * execute the Main() function in our plugin every game/server frame.
  *
  * We can then call `yield()` to suspend script execution and return
