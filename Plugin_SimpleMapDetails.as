@@ -3,10 +3,6 @@
 
 bool windowIsVisible = false;
 
-void Main(){
-
-}
-
 void RenderMenu(){
 	if(UI::MenuItem("SimpleMapDetails", "", false)) {
 		windowIsVisible = true;
