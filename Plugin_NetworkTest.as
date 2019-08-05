@@ -73,7 +73,7 @@ void Main()
 
 		// Parse the header line.
 		auto parse = line.Split(":");
-		if (parse.length == 2 && parse[0].ToLower() == "content-length") {
+		if (parse.Length == 2 && parse[0].ToLower() == "content-length") {
 			// If this is the content length, remember it.
 			contentLength = Text::ParseInt(parse[1].Trim());
 		}
@@ -102,7 +102,7 @@ void Main()
 		response += chunk;
 
 		// Subtract what we've read from the content length.
-		contentLength -= chunk.Length();
+		contentLength -= chunk.Length;
 
 		// If there's more to read, yield until the next frame. (Not necessary,
 		// we could also only yield if there's no data available, but in this
