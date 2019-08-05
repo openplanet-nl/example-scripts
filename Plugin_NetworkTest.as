@@ -73,7 +73,7 @@ void Main()
 
 		// Parse the header line.
 		auto parse = line.Split(":");
-		if (parse.get_Length() == 2 && parse[0].ToLower() == "content-length") {
+		if (parse.length == 2 && parse[0].ToLower() == "content-length") {
 			// If this is the content length, remember it.
 			contentLength = Text::ParseInt(parse[1].Trim());
 		}
