@@ -64,6 +64,10 @@ void Main()
 
 void Render()
 {
+	if (g_toTime == 0) {
+		return;
+	}
+
 	float timeFactor = Math::InvLerp(g_fromTime, g_toTime, Time::Now);
 
 	vec4 colFill = vec4(1, 0.9f, 0.7f, 1);
