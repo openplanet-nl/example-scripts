@@ -2,7 +2,7 @@
 #author "Miss"
 #category "Examples"
 
-/* This plugin will open a TCP socket on port 80 to icanhazip.com, sends a
+/* This plugin will open a TCP socket on port 80 to ip.mrag.nl, sends a
  * GET request to the server, and waits for a response to print to log.
  *
  * This is all done in an asynchronous manner - the connecting, the sending,
@@ -16,15 +16,15 @@ void Main()
 	// Create a new socket.
 	auto sock = Net::Socket();
 
-	// Try to initiate a socket to icanhazip.com on port 80.
-	if (!sock.Connect("icanhazip.com", 80)) {
+	// Try to initiate a socket to ip.mrag.nl on port 80.
+	if (!sock.Connect("ip.mrag.nl", 80)) {
 		// If it failed, there was some socket error. (This is not necessarily
 		// a connection error!)
 		print("Couldn't initiate socket connection.");
 		return;
 	}
 
-	print(Time::Now + " Connecting to host...");
+	print("Connecting to host...");
 
 	// Wait until we are connected. This is indicated by whether we can write
 	// to the socket.
@@ -32,12 +32,12 @@ void Main()
 		yield();
 	}
 
-	print(Time::Now + " Connected! Sending request...");
+	print("Connected! Sending request...");
 
 	// Send raw data (as a string) to the server.
 	if (!sock.WriteRaw(
 		"GET / HTTP/1.1\r\n" +
-		"Host: icanhazip.com\r\n" +
+		"Host: ip.mrag.nl\r\n" +
 		"User-agent: Openplanet NetworkTest Plugin\r\n" +
 		"Connection: close\r\n" +
 		"\r\n"
@@ -47,7 +47,7 @@ void Main()
 		return;
 	}
 
-	print(Time::Now + " Waiting for headers...");
+	print("Waiting for headers...");
 
 	// We are now ready to wait for the response. We'll need to note down
 	// the content length from the response headers as well.
@@ -85,10 +85,10 @@ void Main()
 		}
 
 		// Print the header line.
-		print(Time::Now + " \"" + line + "\"");
+		print("\"" + line + "\"");
 	}
 
-	print(Time::Now + " Waiting for response...");
+	print("Waiting for response...");
 
 	// At this point, we've parsed all the headers. We can now wait for the
 	// actual response body.
@@ -114,8 +114,8 @@ void Main()
 	}
 
 	// We're all done!
-	print(Time::Now + " All done!");
-	print(Time::Now + " Response: \"" + response + "\"");
+	print("All done!");
+	print("Response: \"" + response + "\"");
 
 	// Close the socket.
 	sock.Close();
