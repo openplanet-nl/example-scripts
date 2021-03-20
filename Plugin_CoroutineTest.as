@@ -1,5 +1,6 @@
 #name "Coroutine example"
 #author "Miss"
+#category "Examples"
 
 /* This plugin demonstrates how coroutines work and how they can be
  * created and managed.

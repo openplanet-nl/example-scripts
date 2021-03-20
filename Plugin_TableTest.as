@@ -1,5 +1,6 @@
 #name "Table test"
 #author "Miss"
+#category "Examples"
 
 class Item
 {

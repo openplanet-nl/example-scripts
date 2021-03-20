@@ -1,5 +1,6 @@
 #name "Yield example"
 #author "Miss"
+#category "Examples"
 
 /* This plugin demonstrates how a script loop works. Openplanet will
  * execute the Main() function in our plugin every game/server frame.

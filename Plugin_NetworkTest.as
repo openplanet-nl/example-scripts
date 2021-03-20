@@ -1,5 +1,6 @@
 #name "Network example"
 #author "Miss"
+#category "Examples"
 
 /* This plugin will open a TCP socket on port 80 to icanhazip.com, sends a
  * GET request to the server, and waits for a response to print to log.

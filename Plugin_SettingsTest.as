@@ -1,5 +1,6 @@
 #name "Settings example"
 #author "Miss"
+#category "Examples"
 
 /* This plugin demonstrates how persistent settings can be created and
  * automatically stored in Openplanet's Settings.ini file.

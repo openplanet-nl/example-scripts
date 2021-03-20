@@ -1,5 +1,6 @@
 #name "Draw example"
 #author "Miss"
+#category "Examples"
 
 /* This plugin is a simple demo of the drawing API. It draws a circle
  * and a rounded square on the screen, with a line in between, and the
