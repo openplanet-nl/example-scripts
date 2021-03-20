@@ -1,6 +1,10 @@
-#name "Table test"
+#name "Table example"
 #author "Miss"
 #category "Examples"
+
+/* This example shows how the tables UI works. It consists of the basics, which is simply drawing
+ * the rows and columns, as well as sorting.
+ */
 
 class Item
 {
