@@ -19,7 +19,7 @@
  * These examples are not intended to be the bible for
  * achieving these effects, but instead a set of ideas and
  * inspirations that you can apply to your use case. The
- * strategies use here can be mixed and matched, and built
+ * strategies used here can be mixed and matched, and built
  * upon.
  * 
  * Finally, larger data structures may benefit more from
