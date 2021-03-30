@@ -5,8 +5,8 @@
 /* This plugin demonstrates how persistent settings can be created and
  * automatically stored in Openplanet's Settings.ini file.
  *
- * Settings must be either a bool, int, float, or string. More will be
- * added in the future if they are deemed necessary.
+ * Settings must be either a bool, int, float, string, or enum. More
+ * will be added in the future if they are deemed necessary.
  */
 
 // Each setting can have a name and description, which will be displayed
@@ -57,6 +57,18 @@ string FooTextMultiline = "Foo!\nThere's multiple lines here.";
 // settings dialog as asterisks.
 [Setting password]
 string FooTextPassword = "hunter2";
+
+// Enum settings will appear as a drop-down selector in the settings dialog,
+// listing each defined enum value.
+[Setting]
+MyEnum FooEnum = MyEnum::Foo;
+
+enum MyEnum
+{
+	Foo,
+	Bar,
+	Baz
+}
 
 // Our main routine
 void Main()
