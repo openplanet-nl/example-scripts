@@ -6,15 +6,12 @@
  * data with the Settings interface, when the data types
  * are not supported by the Setting annotation.
  * 
- * In this demonstration, we will be storing vec3 objects,
- * since they are not supported by the Setting annotation
- * directly, but they are still simple enough to be a
- * good example.
- *
- * One shortcoming of this example is that it is rather
- * cheap and easy to construct vec3 objects on the fly,
- * where needed. These techniques are most useful when
- * applied to objects that are more expensive to construct.
+ * In this demonstration, we will be storing vec3 objects.
+ * This data type is supported by the Settings interface,
+ * natively, but they will serve as a simple example that
+ * can be extended to more complex use cases, and in fact,
+ * these techniques are most useful when applied to objects
+ * that are more expensive to construct.
  * 
  * These examples are not intended to be the bible for
  * achieving these effects, but instead a set of ideas and
@@ -30,10 +27,14 @@
  */
 
 /* Our goal for each vec3 is to approximate the following
- * (invalid) code:
+ * code:
  * 
  *     [Setting]
  *     vec3 Data;
+ * 
+ * Remember, the above code is valid, but this file will
+ * show techniques that are applicable to unsupported data
+ * types.
  * 
  * Each example has:
  * - a declaration, which defines the objects that we want
