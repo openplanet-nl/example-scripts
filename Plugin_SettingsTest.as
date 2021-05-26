@@ -5,8 +5,13 @@
 /* This plugin demonstrates how persistent settings can be created and
  * automatically stored in Openplanet's Settings.ini file.
  *
- * Settings must be either a bool, int, float, string, or enum. More
- * will be added in the future if they are deemed necessary.
+ * Settings must be one of the following data types: 
+ *  - bool
+ *  - int, float
+ *  - string
+ *  - enum
+ *  - vec2, vec3, vec4
+ * More will be added in the future if they are deemed necessary.
  */
 
 // Each setting can have a name and description, which will be displayed
@@ -62,6 +67,20 @@ string FooTextPassword = "hunter2";
 // listing each defined enum value.
 [Setting]
 MyEnum FooEnum = MyEnum::Foo;
+
+// For vec3 and vec4 settings, the 'color' tag may be added. In the settings
+// dialog, a color selector will be shown for these values.
+[Setting color]
+vec4 FooColor = vec4(0, 0, 0, 0.7f);
+
+// All settings support the optional 'category' tag. If provided, settings
+// will be organized under tabs, for each category. If all settings are in
+// the same category, the tab bar will be hidden. If some settings have a
+// category and other do not (such as in this script), the settings without
+// a defined category will appear under the 'Uncategorized' tab. Tabs will
+// appear in the order that they are first encountered.
+[Setting category="Misc"]
+int FooCategorizedValue = 25;
 
 enum MyEnum
 {
