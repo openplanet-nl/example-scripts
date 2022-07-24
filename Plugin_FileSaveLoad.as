@@ -71,7 +71,7 @@ void Main() {
     }
     rootFile4.Close();
 
-    // JSON data, by comparison, is much easier to read and write.
+    // JSON data, by comparison, is much easier to read and write, although isn't always that performant.
     // Let's create a sample JSON object to see how this works.
     Json::Value jData = Json::Object();
     jData['isJson'] = true;
@@ -90,4 +90,8 @@ void Main() {
     // so you shouldn't rely on the serialized version for things like equality tests.
     print("original jData: " + Json::Write(jData));
     print("JSON from file: " + Json::Write(jData2));
+
+    // And that's all there is to getting started reading and writing files.
+    // If you're interested in binary data particularly, please see the documentation for `IO::File`:
+    // -> https://openplanet.dev/docs/api/IO/File
 }
