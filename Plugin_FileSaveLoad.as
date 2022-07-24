@@ -13,9 +13,11 @@ const string Line3 = "Line3";
 
 void Main() {
     /* Before we can store data in files, we need the path to those files.
-       The easiest way to do this is `IO::FromStorageFolder`. This will return
+       The easiest way to do this is `IO::FromStorageFolder`. This will return a path
+       to the specified file name in a local directory specific to your plugin.
     */
     string rootFilePath = IO::FromStorageFolder("rootFile.txt");
+    // Since we want to save the second file in a subfolder, we must ensure that it exists
     IO::CreateFolder(IO::FromStorageFolder("jsonFiles/"), true);
     string jsonFilePath = IO::FromStorageFolder("jsonFiles/file2.json");
     print("rootFilePath: " + rootFilePath);
@@ -36,9 +38,11 @@ void Main() {
     IO::File rootFile2(rootFilePath, IO::FileMode::Read);
     // Let's read our string back.
     string tmp = rootFile2.ReadLine();
+    // Ensure the line is what we expected it to be.
     if (Line1 != tmp) {
         throw("Expected '" + Line1 + "' but read back: '" + tmp + "'");
     }
+    // And again for the second line.
     tmp = rootFile2.ReadLine();
     if (Line2 != tmp) {
         throw("Expected '" + Line2 + "' but read back: '" + tmp + "'");
@@ -48,10 +52,10 @@ void Main() {
     if ("" != tmp) {
         throw("Expected '' but read back: '" + tmp + "'");
     }
-    // since we're done reading the file, we should close it
+    // Since we're done reading the file, we should close it.
     rootFile2.Close();
 
-    // We can add more data to an existing file using the Append mode
+    // We can add more data to an existing file using the Append mode.
     // If we use the Write mode here, then we'd delete any data that was already in the file.
     IO::File rootFile3(rootFilePath, IO::FileMode::Append);
     rootFile3.WriteLine(Line3);
