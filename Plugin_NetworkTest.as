@@ -28,7 +28,7 @@ void Main()
 
 	// Wait until we are connected. This is indicated by whether we can write
 	// to the socket.
-	while (!sock.CanWrite()) {
+	while (!sock.IsReady()) {
 		yield();
 	}
 
